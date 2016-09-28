@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="searchInTable.js"></script>
+<body>
+    <input type="text" id="keyWord" value="">
+<table>
+
+    <thead>
+        <th>序號</th>
+        <th data-searchIndex="name">name</th>
+        <th data-searchIndex="type">type</th>
+        <th data-searchIndex="date">DateTime</th>
+        <th data-notSearchable="1">Manage</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>name-1</td>
+            <td>type-1</td>
+            <td>2016-09-28 12:22:30</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>name-2</td>
+            <td>type-2</td>
+            <td>2016-09-29 12:22:30</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>name-3</td>
+            <td>type-3</td>
+            <td>2016-09-21 12:22:30</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>name-4</td>
+            <td>type-4</td>
+            <td>2016-09-11 12:22:30</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>name-5</td>
+            <td>type-5</td>
+            <td>2016-09-22 12:22:30</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+<script type="text/javascript">
+var option = {
+       fieldAry: ['name','*'] 
+};
+$('table').searchInTable('table', option);
+</script>
+</html>
