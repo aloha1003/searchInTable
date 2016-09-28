@@ -98,12 +98,18 @@
             var returnSeachIndexAry = [];
             if (searchField.indexOf('*')) {    //Search All column
                 th.each(function(i) {
+                    if (isTrue($(this).attr('data-notSearchable'))) {
+                           return true;
+                    }
                     returnSeachIndexAry.push(i+1);
                 }); 
                 return returnSeachIndexAry;
             } else {
                 for (var j = 0; j < searchField.length; j++) {
                     th.each(function(i) {
+                        if (isTrue($(this).attr('data-notSearchable'))) {
+                           return true;
+                        }
                         if ($(this).attr("data-searchIndex") == searchField[j]) {
                             returnSeachIndexAry.push(i+1);
                         }
@@ -114,8 +120,25 @@
             return returnSeachIndexAry;
         }
         function compareStr(searchStr, source) {
-            var Reg = new RegExp(searchStr, "g");
+            var Reg = new RegExp(searchStr, "ig");
             return source.search(Reg);
+        }
+        function isTrue(value)
+        {
+            if (typeof(value) == 'string'){
+                value = value.toLowerCase();
+            }
+            switch(value){
+                case true:
+                case "true":
+                case 1:
+                case "1":
+                case "on":
+                case "yes":
+                    return true;
+                default: 
+                    return false;
+            }
         }
         var ret = $(currentSelector);
 
@@ -126,8 +149,3 @@
 
     };
 }(jQuery));
-
-
-
-
-
