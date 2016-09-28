@@ -2,13 +2,13 @@
     "use strict";
     $.fn.searchInTable = function(selector, opt) {
         var defaultOption = {
-            inputSelector: "input", // Listen Input selector
-            compareTargetAttribute: "value",    // Compare attribute
-            compareTargetSelector: "input",    // Compare selector
-            inputSelectorTriggerEvent: "keyup",
-            refreshSelector: "refresh",
-            refreshSelectorTriggerEvent: "click",
-            fieldAry: []
+            inputSelector: "input", // Listen Input selector// Listen Input selector
+            compareTargetAttribute: "value",    // Compare attribute// Compare attribute
+            compareTargetSelector: "input",    // Compare selector// Compare selector
+            inputSelectorTriggerEvent: "keyup",// Input selector Trigger event to search 
+            refreshSelector: "refresh",// Refresh Table Selector
+            refreshSelectorTriggerEvent: "click",// Refresh selector trigger
+            fieldAry: [] //Search those columns which map th's data-searchIndex.  Or You can assign '*' to seach whole column.
         };
         var currentSelector = selector;
         var option = $.extend(defaultOption, opt);
